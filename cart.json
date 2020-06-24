@@ -1,0 +1,104 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "",
+        "title": "Cart",
+        "description": "Microservicii cos de cumparaturi",
+        "license": {
+            "name": "MIT",
+            "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+        }
+    },
+    "host": "cart",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json; charset=utf-8"
+    ],
+    "produces": [
+        "application/json; charset=utf-8"
+    ],
+    "paths": {
+       " /cart":
+    "get":
+      "description": "List items in cart for current logged in user"
+      "operationId": "/cart > GET"
+      "produces":
+     "parameters": [],
+      "- name": "id"
+        "in": "query"
+        "required": true
+        "type": "integer"
+      "responses":
+        "200":
+          "description": "successful operation"
+          "schema":
+            "type": "array"
+            "items":
+              "$ref": "#/definitions/cart"
+			}
+		    }
+		}
+	    }
+	},
+	"/paymentAuth": {
+	    "post": {
+		"description": "Payment authorisation",
+		"operationId": "/paymentAuth > POST",
+		"produces": [
+		    "application/json; charset=utf-8"
+		],
+		"responses": {
+		    "200": {
+			"description": "",
+			"schema": {
+			    "$ref": "#/definitions/paymentAuth"
+			}
+		    }
+		}
+                
+	    }
+	}
+    },
+    "definitions": {
+        "cart": {
+            "title": "cart",
+            "type": "integer",
+            "properties": {
+		"cart": {
+		    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "properties": {
+                            "idcommand": {
+                                "type": "integer"
+                            },
+                            "idclient": {
+                                "type": "integer"
+                            },
+                           
+                        }
+                    }
+		}
+            },
+            "required": [
+                "cart"
+            ]
+        },
+	"paymentAuth": {
+            "title": "paymentAuth response",
+            "type": "object",
+            "properties": {
+		"authorised": {
+		    "type": "boolean"
+		}
+            },
+            "required": [
+		"authorised"
+            ]
+	}
+    }
+}
