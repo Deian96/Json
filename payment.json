@@ -3,7 +3,7 @@
     "info": {
         "version": "",
         "title": "Payment",
-        "description": "Payment service spec",
+        "description": "Microserviciu plati",
         "license": {
             "name": "MIT",
             "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
